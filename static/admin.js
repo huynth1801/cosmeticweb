@@ -26,18 +26,6 @@ function displayTransactionList() {
                 </tr>`;
         }).join('');
 
-        // const customersInfoHTML =
-        //         `
-        //         <tr>
-        //             <td>${customersInfo.fullname}</td>
-        //             <td>${customersInfo.phone}</td>
-        //             <td>${customersInfo.address}</td>
-        //             <td>${customersInfo.email}</td>
-        //             <td>
-        //                 <button class="btn btn-sm btn-primary mr-2" onclick="editTransaction(${customersInfo.customerId})">Sửa</button>
-        //                 <button class="btn btn-sm btn-danger" onclick="deleteTransaction(${customersInfo.customerId})">Xoá</button>
-        //             </td>
-        //         </tr>`;
 
         transactionListContainer.innerHTML =  transactionListHTML;
     } else {
