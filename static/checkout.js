@@ -148,6 +148,42 @@ function deleteProduct(productId) {
     }
 }
 
+document.getElementById("buyer-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Ngăn chặn form gửi dữ liệu đi
+    
+    // Lấy thông tin từ các trường input
+    var fullname = document.getElementById("fullname").value;
+    var email = document.getElementById("email").value;
+    var address = document.getElementById("address").value;
+    var phone = document.getElementById("phone").value;
+    
+    // Tạo một đối tượng chứa thông tin khách hàng
+    var customerInfo = {
+        fullname: fullname,
+        email: email,
+        address: address,
+        phone: phone
+    };
+    
+    // Lưu thông tin khách hàng vào localstorage
+    localStorage.setItem("customerInfo", JSON.stringify(customerInfo));
+    
+    // Hiển thị pop-up thông báo thành công
+    var popupElement = document.getElementById("popup");
+    var popupMessageElement = document.getElementById("popup-message");
+    popupMessageElement.textContent = "Đơn hàng đã được đặt thành công!";
+    popupElement.classList.add("popup-show");
+
+    setTimeout(function() {
+        popupElement.classList.remove("popup-show");
+    }, 3000);
+    
+    // Chuyển hướng hoặc thực hiện các hành động khác sau khi lưu thành công
+    
+    // Ví dụ: Chuyển hướng đến trang xác nhận đơn hàng
+    // window.location.href = "products.html";
+});;
+
 
 function goBack() {
     // Chuyển hướng về trang danh sách sản phẩm (index.html)
